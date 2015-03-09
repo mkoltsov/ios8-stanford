@@ -50,12 +50,12 @@ class ViewController: UIViewController {
         }
         
         switch operation {
-            case "×" : performOperation {$0 * $1}
-            case "÷":performOperation {$1 / $0}
-            case  "+":performOperation {$0 + $1}
-            case "−": performOperation {$0 - $1}
-            case "√": performOperation {sqrt($0)}
-            default: break
+        case "×" : performOperation {$0 * $1}
+        case "÷":performOperation {$1 / $0}
+        case  "+":performOperation {$0 + $1}
+        case "−": performOperation {$0 - $1}
+        case "√": performOperation {sqrt($0)}
+        default: break
         }
     }
     
