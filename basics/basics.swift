@@ -76,3 +76,24 @@ let vge = VideoModeStruct(chef:"chef")
 
 println(vge.chef)
 println(inst.chef)
+
+struct TimesTable{
+	let multiplier:Int
+	subscript (index:Int) -> Int{
+	return multiplier*index
+	}
+}
+
+let threeTimesTable = TimesTable(multiplier:3)
+
+println(threeTimesTable[6])
+
+class BaseClass{
+	var chef:String {return "Pupa"}
+}
+
+class SubClass:BaseClass {
+	override var chef:String {return "Chef loves Pupa"}
+}
+let instan = SubClass()
+println(instan.chef)
