@@ -80,7 +80,7 @@ println(inst.chef)
 struct TimesTable{
 	let multiplier:Int
 	subscript (index:Int) -> Int{
-	return multiplier*index
+	    return multiplier*index
 	}
 }
 
