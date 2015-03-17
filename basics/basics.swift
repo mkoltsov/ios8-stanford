@@ -97,3 +97,34 @@ class SubClass:BaseClass {
 }
 let instan = SubClass()
 println(instan.chef)
+
+class Opt {
+	var value1:Int
+}
+
+class Real {
+	var ref:Opt?
+}
+
+let nst1 = Real()
+
+println(nst1.ref?.value1)
+lat op = Opt()
+op.value1=2
+
+println(nst1.ref?.value1)
+
+if op is Opt {
+	println("is opt")
+}
+
+
+if nst1 is Real {
+	println("is Real")
+}
+
+if nst1 is Opt {
+	println("is Real")
+} else {
+	println("is not opt")
+}
