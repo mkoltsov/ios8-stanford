@@ -98,8 +98,27 @@ class SubClass:BaseClass {
 let instan = SubClass()
 println(instan.chef)
 
+struct TestStr{
+	var temp:Double
+	init(){
+ 		temp = 32.0
+	}
+}
+
+class ClosureInAClass{
+
+	let clos:Int = {return 1*2}()
+}
+let closIns = ClosureInAClass()
+
+println("closure in a class instance is \(closIns.clos)")
+
+//let things1:Any = [1,"öne",1.0]
+
+
+
 class Opt {
-	var value1:Int
+	var value1:Int=0
 }
 
 class Real {
@@ -109,22 +128,26 @@ class Real {
 let nst1 = Real()
 
 println(nst1.ref?.value1)
-lat op = Opt()
+
+let op = Opt()
+
 op.value1=2
 
+nst1.ref=op
 println(nst1.ref?.value1)
 
-if op is Opt {
-	println("is opt")
+var things = [Any]()
+
+things.append(1)
+things.append("one")
+things.append(1.0)
+
+for i in things {
+	switch i {
+	case let someInt as Int : println("is an integer")
+	case let someDouble as Double : println("is an double")
+	case let someString as String : println("is an string")
+	default : println("default")
+	}
 }
 
-
-if nst1 is Real {
-	println("is Real")
-}
-
-if nst1 is Opt {
-	println("is Real")
-} else {
-	println("is not opt")
-}
