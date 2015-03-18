@@ -144,10 +144,10 @@ things.append(1.0)
 
 for i in things {
 	switch i {
-	case let someInt as Int : println("is an integer")
-	case let someDouble as Double : println("is an double")
-	case let someString as String : println("is an string")
-	default : println("default")
+		case let someInt as Int : println("is an integer")
+		case let someDouble as Double : println("is an double")
+		case let someString as String : println("is an string")
+		default : println("default")
 	}
 }
 
