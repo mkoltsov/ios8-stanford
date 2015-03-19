@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     
+    @IBOutlet weak var realDisplay: UILabel!
+    
     @IBOutlet weak var display: UILabel!
     
     var userIsInTheMiddleOfTYPINGNUMBER = false
@@ -35,6 +37,13 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func clear() {
+        realDisplay.text! = "0"
+        display.text! = "0"
+        userIsInTheMiddleOfTYPINGNUMBER = false
+        operandStack.removeAll(keepCapacity: false)
+        
+    }
     func performOperation(operation: Double -> Double){
         if operandStack.count>=2{
             displayValue = operation(operandStack.removeLast())
@@ -45,6 +54,7 @@ class ViewController: UIViewController {
     
     @IBAction func operate(sender: UIButton) {
         let operation = sender.currentTitle!
+        realDisplay.text = realDisplay.text! + operation
         if userIsInTheMiddleOfTYPINGNUMBER {
             enter()
         }
@@ -72,9 +82,12 @@ class ViewController: UIViewController {
         let digit =  sender.currentTitle!
         
         if userIsInTheMiddleOfTYPINGNUMBER {
-            display.text = display.text! + digit}
+            display.text = display.text! + digit
+            realDisplay.text = realDisplay.text! + digit
+        }
         else{
             display.text = digit
+            realDisplay.text = realDisplay.text! + digit
             userIsInTheMiddleOfTYPINGNUMBER = true
         }
     }
